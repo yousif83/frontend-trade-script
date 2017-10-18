@@ -1,1 +1,191 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.css";
+
+body {
+  font-family: 'Titillium Web', sans-serif;
+  background-color: #f7f7f7;
+}
+.navbar {
+  background-color: black;
+}
+
+.navbar-brand  {
+  color: white!important;
+}
+
+.nav-link {
+  color: white!important;
+}
+
+
+.btnCard {
+  background-color: #f7f7f7!important;
+  border-color: #eee!important;
+  font-size: 0.9em!important;
+  padding-top: 4%!important;
+  padding-bottom: 4%!important;
+}
+button:hover {
+    background-color: #eee!important;
+}
+main {
+  width: 50%;
+
+  margin: auto;
+  margin-top: 3%;
+  background-color: white;
+
+
+}
+.test {
+      width: 33.33333%;
+      height: 30vh;
+      float: left;
+}
+.cardImg {
+  width:40%;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 0%;
+}
+.cardTitle {
+  margin: auto;
+  margin-top: 2%;
+
+}
+.CardBtns {
+  margin: auto;
+
+}
+.suggestedImgs {
+   width: 100%;
+   height: 6.5vw;
+   background-size: cover;
+   display: block;
+   border-radius: 50%;
+}
+
+.profileImg {
+  width: 35%;
+  height: 3.5vw;
+  background-size: cover;
+  display: block;
+  border-radius: 50%;
+  float: left;
+
+}
+
+.profile {
+  width:10%;
+  margin-left: 2%;
+}
+.profileName {
+  font-size: 0.9em;
+  margin-top: 10%;
+  margin-left: 45%;
+  color: white;
+}
+.mainTitle {
+  /*margin-bottom: 1%;*/
+  padding-top: 1.5%;
+  font-size: 1.5em;
+ text-align: center;
+ /*padding-left: 2%;*/
+  height: 8vh;
+  background-color: white;
+  border: 1px solid #eee;
+}
+.connectTitle {
+  /*margin-bottom: 1%;*/
+  padding-top: 1.5%;
+  font-size: 1.5em;
+ text-align: center;
+ /*padding-left: 2%;*/
+  height: 14vh;
+  background-color: white;
+  border: 1px solid #eee;
+}
+.connectionCard {
+  width: 100%;
+  height: 15vh;
+  border-radius: 0px;
+  padding: 1.5%;
+  float: left;
+  background-color: white;
+  border: 1px solid #eee;
+
+}
+.connectionImg {
+  width:14%;
+    float: left;
+}
+.ImgConnect {
+  width: 100%;
+  height: 12vh;
+  background-size: cover;
+  display: block;
+  border-radius: 50%;
+}
+.connectionTitle {
+ margin-top: 5%;
+ margin-left: 2%;
+ font-weight: bold;
+ float: left;
+}
+.connectionBtn {
+  float: right;
+    margin-right: 5%;
+}
+.connectBtn {
+  background-color: #f7f7f7!important;
+  border-color: #eee!important;
+
+  margin-top: 25%;
+
+}
+
+.mainMessaging {
+  margin-top: 2%;
+  width: 70%;
+  height: 80vh;
+  border: 1px solid #eee;
+  /*margin-bottom: 2%;*/
+}
+.pm {
+  color: black;
+}
+.navMessage {
+  background-color: white!important;
+  border-bottom: 1px solid #eee;
+}
+.navbarMessageName {
+  color: black!important;
+}
+.board {
+  width: 97.5%;
+  margin-left: 2.5%;
+  height: 55vh;
+   overflow-y: scroll;
+}
+.messageTextArea {
+
+  width: 95%;
+  margin: auto;
+}
+.msgTextArea {
+  width: 100%;
+  border: 2px solid #585b60;
+  border-radius: 1%;
+}
+.tabLink {
+  color: black!important;
+}
+.networkTab {
+  margin: 0;
+  font-size: 0.8em;
+}
+.tabSelected {
+  color: #0077b5!important;
+  border-bottom: 4px solid #0077b5;;
+}

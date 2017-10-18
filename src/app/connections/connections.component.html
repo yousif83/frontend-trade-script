@@ -1,0 +1,23 @@
+<app-navbar> </app-navbar>
+<main class="mainConnections">
+  <div class="connectTitle">
+    <p>Connections</p>
+    <ul class="nav networkTab">
+      <li class="nav-item">
+        <a class="tabLink nav-link " [ngClass]="{'tabSelected': connectFlag}" (click)="setConnectFlag()">Connected</a>
+      </li>
+      <li class="nav-item">
+        <a class="tabLink nav-link" [ngClass]="{'tabSelected': receivedFlag}" (click)="setReceivedFlag()">Received</a>
+      </li>
+      <li class="nav-item">
+        <a class="tabLink nav-link" [ngClass]="{'tabSelected': sentFlag}" (click)="setPendingFlag()">Sent</a>
+      </li>
+
+    </ul>
+  </div>
+
+    <app-one-connection *ngFor="let connection of connections" [singleConnection]="connection" [hidden]= !connectFlag > </app-one-connection>
+    <app-one-received *ngFor="let request of requests" [singleRequest]="request" [hidden]= !receivedFlag> </app-one-received>
+    <app-one-sent *ngFor="let sentRequest of sentRequests" [SingleSentRequest]="sentRequest" [hidden]= !sentFlag> </app-one-sent>
+
+</main>

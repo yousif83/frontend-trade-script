@@ -1,0 +1,8 @@
+<app-navbar> </app-navbar>
+<main class="mainMatches">
+ <div class="mainTitle">
+   <p>Suggested Matches</p>
+ </div>
+<app-one-suggested-match *ngFor="let match of matches" [suggestedMatch]="match"  [allMacthes]="matches"> </app-one-suggested-match>
+
+</main>
