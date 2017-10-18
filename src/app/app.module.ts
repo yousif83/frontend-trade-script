@@ -16,7 +16,8 @@ import { SignupComponent } from './signup/signup.component'
 const appRoutes: Routes= [
   {path : 'matches', component : SuggestedMatchesComponent },
   {path : 'connections', component : ConnectionsComponent },
-  {path : 'lesson', component : MessageComponent }
+  {path : 'lesson', component : MessageComponent },
+  {path : 'signup', component : SignupComponent }
 ]
 @NgModule({
   declarations: [
