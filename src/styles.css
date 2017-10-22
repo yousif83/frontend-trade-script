@@ -226,3 +226,19 @@ main {
 .navSignin {
   padding-left: 1%;
 }
+.chatMessaging {
+  border: 1px solid black;
+  width: 20%;
+  height: 30vh;
+  float: right;
+
+}
+.chatBoard {
+  width: 100%;
+  height: 20vh;
+    border: 1px solid green;
+     overflow: scroll;
+}
+.inputhat {
+
+}

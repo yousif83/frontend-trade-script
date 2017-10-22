@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
@@ -12,7 +13,8 @@ import {HttpModule} from '@angular/http';
 import { OneConnectionComponent } from './one-connection/one-connection.component';
 import { OneReceivedComponent } from './one-received/one-received.component';
 import { OneSentComponent } from './one-sent/one-sent.component';
-import { SignupComponent } from './signup/signup.component'
+import { SignupComponent } from './signup/signup.component';
+import { OneChatMessageComponent } from './one-chat-message/one-chat-message.component'
 const appRoutes: Routes= [
   {path : 'matches', component : SuggestedMatchesComponent },
   {path : 'connections', component : ConnectionsComponent },
@@ -30,10 +32,12 @@ const appRoutes: Routes= [
     OneConnectionComponent,
     OneReceivedComponent,
     OneSentComponent,
-    SignupComponent
+    SignupComponent,
+    OneChatMessageComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes),
     HttpModule
   ],

@@ -10,17 +10,6 @@
   </nav>
 
   <div class="board">
-     <!-- <p class="pm" >hi tell me when u are ready to start the session i will start with how to define variables in javascript</p>
-      <p class="pm" >hi tell me when u are ready to start the session i will start with how to define variables in javascript</p>
-       <p class="pm" >hi tell me when u are ready to start the session i will start with how to define variables in javascript</p>
-        <p class="pm" >hi tell me when u are ready to start the session i will start with how to define variables in javascript</p>
-         <p class="pm" >hi tell me when u are ready to start the session i will start with how to define variables in javascript</p>
-          <p class="pm" >hi tell me when u are ready to start the session i will start with how to define variables in javascript</p>
-           <p class="pm" >hi tell me when u are ready to start the session i will start with how to define variables in javascript</p>
-            <p class="pm" >hi tell me when u are ready to start the session i will start with how to define variables in javascript</p>
-             <p class="pm" >hi tell me when u are ready to start the session i will start with how to define variables in javascript</p> -->
-              <!-- <p class="pm" >hi tell me when u are ready to start the session i will start with how to define variables in javascript </p>
-               <p class="pm" >hi tell me when u are ready to start the session i will start with how to define variables in javascript</p> -->
                 <!-- <p class="pm" >hi tell me when u are ready to start the session i will start with how to define variables in javascript</p> -->
     <p class="pm" >hi tell me when u are ready to start the session i will start with how to define variables in javascript</p>
    <p class="pm" >hi tell me when u are ready to start the session i will start with how to define variables in javascript</p>
@@ -28,5 +17,19 @@
   <div class="messageTextArea">
     <textarea class="msgTextArea" placeholder="Message Bill Gates" name="name" rows="4" cols="80"></textarea>
   </div>
+    <div class="">
+      <button class="btn btn-primary" type="button" name="button" (click)="startChat()">Message</button>
+    </div>
 
 </main>
+<div class="chatMessaging" [hidden]= !flag>
+   <div class="chatBoard">
+  <app-one-chat-message *ngFor="let chat of chats" [singlChat]="chat" > </app-one-chat-message>
+   </div>
+   <div >
+  <textarea [(ngModel)]="chatMessage" name="name" rows="1" cols="33"></textarea>
+   </div>
+   <div class="">
+     <button type="button" name="button" (click)="sendMessage(chatMessage)">send</button>
+   </div>
+</div>

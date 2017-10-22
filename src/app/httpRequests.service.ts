@@ -17,4 +17,10 @@ getConnections(stat) {
 acceptRequest(userId: any []){
   return this.http.put(`http://localhost:3000/network/${this.signInId}/${userId}/accept`,userId)
 }
+getChatsByChatRoom(chatRoom) {
+  return this.http.get(`http://localhost:3000/chat/${chatRoom}`)
+}
+insertChatMessage(chatBody) {
+  return this.http.put((`http://localhost:3000/chat/`),chatBody)
+}
 }
