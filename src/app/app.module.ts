@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { TagInputModule } from 'ngx-chips';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import { AppComponent } from './app.component';
@@ -15,10 +17,11 @@ import { OneReceivedComponent } from './one-received/one-received.component';
 import { OneSentComponent } from './one-sent/one-sent.component';
 import { SignupComponent } from './signup/signup.component';
 import { OneChatMessageComponent } from './one-chat-message/one-chat-message.component'
+import { NotificationsComponent } from './notifications/notifications.component'
 const appRoutes: Routes= [
   {path : 'matches', component : SuggestedMatchesComponent },
   {path : 'connections', component : ConnectionsComponent },
-  {path : 'lesson', component : MessageComponent },
+  {path : 'lesson/:selectedUserId', component : MessageComponent },
   {path : 'signup', component : SignupComponent }
 ]
 @NgModule({
@@ -33,13 +36,16 @@ const appRoutes: Routes= [
     OneReceivedComponent,
     OneSentComponent,
     SignupComponent,
-    OneChatMessageComponent
+    OneChatMessageComponent,
+    NotificationsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    HttpModule
+    HttpModule,
+    TagInputModule,
+    BrowserAnimationsModule
   ],
   providers: [HttpRequestsService],
   bootstrap: [AppComponent]

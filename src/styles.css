@@ -52,6 +52,7 @@ main {
 .cardTitle {
   margin: auto;
   margin-top: 2%;
+  margin-bottom: 0px;
 
 }
 .CardBtns {
@@ -194,7 +195,9 @@ main {
   height: 5vh;
   float: left;
   margin-bottom: 3%;
-  border: 1px solid #eee;
+  border: 0px solid white;
+  border-bottom: 2px solid #eee;
+  border-radius: 0px;
 
 
 }
@@ -208,6 +211,7 @@ main {
   margin: auto;
   margin-top: 2%;
   font-size: 0.75em;
+  font-family: Roboto, Helvetica Neue, sans-serif;
 }
 .signupBtn {
   width: 100%;
@@ -231,6 +235,11 @@ main {
   width: 20%;
   height: 30vh;
   float: right;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  z-index: 1000;
 
 }
 .chatBoard {
@@ -238,7 +247,34 @@ main {
   height: 20vh;
     border: 1px solid green;
      overflow: scroll;
+     z-index: 1000;
 }
 .inputhat {
 
+}
+.tagsField {
+  width: 100%;
+  height: 5vh;
+  float: left;
+
+  font-size: 1.3em;
+  margin-bottom: 3%;
+  font-family: sans-serif;
+  /*border: 1px solid black!important;*/
+
+}
+.skills {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 5%;
+  text-align: center;
+  font-size: 0.8em;
+  color: #616a77;
+  font-family: sans-serif;
+  font-weight:100;
+  letter-spacing: 0px;
+}
+.suggestedName {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }

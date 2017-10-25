@@ -12,14 +12,14 @@
         <form class="form-inline">
      <div class="navSignin input-group">
 
-       <input type="text" class="form-control" placeholder="Email" aria-describedby="basic-addon1">
+       <input type="text" class="form-control" name="loginEmail" [(ngModel)]="loginEmail" placeholder="Email" aria-describedby="basic-addon1" required>
      </div>
      <div class="navSignin input-group">
 
-       <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+       <input type="text" class="form-control" name="loginPassword" [(ngModel)]="loginPassword" placeholder="Password" aria-describedby="basic-addon1" required>
      </div>
      <div class="navSignin input-group">
-         <button type="button" class=" signupBtn button btn btn-primary" name="button">Sign In</button>
+         <button type="button" class=" signupBtn button btn btn-primary" name="button" (click)="login()">Sign In</button>
      </div>
    </form>
       </ul>
@@ -29,18 +29,19 @@
        <h1 class="signupTitle" >Sign Up</h1>
   <form class="signupForm">
     <div class="fieldsContent">
-      <input class="form-control signupField" type="text" name="" value="" placeholder="Email">
-      <input class="form-control signupField" type="text" name="" value="" placeholder="Password">
-      <input class="form-control signupField" type="text" name="" value="" placeholder="Skills you can teach">
-      <input class="form-control signupField" type="text" name="" value="" placeholder="Skills you want to learn ">
-
+      <input class="form-control signupField" type="text" name="Name" value="" placeholder="Name" [(ngModel)]="name">
+      <input class="form-control signupField" type="text" name="Email" value="" placeholder="Email" [(ngModel)]="email">
+      <input class="form-control signupField" type="text" name="Password" value="" placeholder="Password" [(ngModel)]="password">
+      <tag-input class="tagsField" name="skillsTeach" [(ngModel)]='skillsTeach' theme='bootstrap' [secondaryPlaceholder]="'Skills you can teach'" ></tag-input>
+      <tag-input class="tagsField" name="skillsLearn" [(ngModel)]='skillsLearn' theme='bootstrap' [secondaryPlaceholder]="'Skills you want to learn '" ></tag-input>
       <div class="form-group">
    <label for="exampleInputFile">Upload your Image</label>
-   <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+   <input type="file" class=" form-control-file" id="selectFile" name="selectFile" aria-describedby="fileHelp" (change)="uploadImage()" >
+
 
  </div>
 
-      <button type="button" class=" signupBtn button btn btn-primary" name="button">Sign Up</button>
+      <button type="button" class=" signupBtn button btn btn-primary" name="button" (click)="signup()">Sign Up</button>
     </div>
 
   </form>

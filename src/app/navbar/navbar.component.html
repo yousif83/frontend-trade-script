@@ -7,7 +7,7 @@
     <a class="navbar-brand" >LINK SKILLS</a>
     <div class="profile">
       <div class="">
-        <img class="profileImg" src="https://i.ytimg.com/vi/tnBQmEqBCY0/maxresdefault.jpg" alt="">
+        <img class="profileImg" src="{{signedUserImg}}" alt="">
       </div>
       <div class="profileName">
         <p>Elon Musk</p>
@@ -26,8 +26,10 @@
         <a class="nav-link "routerLink="/connections" >My Connections</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" >logout</a>
+        <a class="nav-link" (click)="logout()" >logout</a>
       </li>
     </ul>
 
   </nav>
+
+  <app-notifications> </app-notifications>

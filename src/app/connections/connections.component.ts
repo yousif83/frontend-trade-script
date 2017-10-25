@@ -35,15 +35,18 @@ export class ConnectionsComponent implements OnInit {
     this.HttpRequestsService.getConnections('connections')
     .subscribe(
       (response) => {
-        console.log(response.json())
         this.connections=response.json()
+        this.HttpRequestsService.inChatRoom.subscribe(
+          (acceptedRequest: object) => {
+          console.log(acceptedRequest)
+          this.connections.push(acceptedRequest)
+        })
       },
         (error) => console.log(error)
   )
   this.HttpRequestsService.getConnections('pending')
   .subscribe(
     (response) => {
-      console.log(response.json())
       this.sentRequests=response.json()
     },
       (error) => console.log(error)
@@ -51,7 +54,6 @@ export class ConnectionsComponent implements OnInit {
 this.HttpRequestsService.getConnections('received')
 .subscribe(
   (response) => {
-    console.log(response.json())
     this.requests=response.json()
   },
     (error) => console.log(error)

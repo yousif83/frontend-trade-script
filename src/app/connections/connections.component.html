@@ -16,8 +16,8 @@
     </ul>
   </div>
 
-    <app-one-connection *ngFor="let connection of connections" [singleConnection]="connection" [hidden]= !connectFlag > </app-one-connection>
-    <app-one-received *ngFor="let request of requests" [singleRequest]="request" [hidden]= !receivedFlag> </app-one-received>
+    <app-one-connection *ngFor="let connection of connections" [singleConnection]="connection"  [hidden]= !connectFlag > </app-one-connection>
+    <app-one-received *ngFor="let request of requests" [singleRequest]="request" [allRequests]="requests" [hidden]= !receivedFlag> </app-one-received>
     <app-one-sent *ngFor="let sentRequest of sentRequests" [SingleSentRequest]="sentRequest" [hidden]= !sentFlag> </app-one-sent>
 
 </main>

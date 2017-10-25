@@ -8,19 +8,19 @@ import {HttpRequestsService} from '../httpRequests.service';
 })
 export class OneReceivedComponent implements OnInit {
      @Input()  singleRequest
+     @Input()  allRequests
   constructor(private HttpRequestsService: HttpRequestsService) { }
 acceptRequest(){
   this.HttpRequestsService.acceptRequest(this.singleRequest._id)
  .subscribe(
    response => {
-
-// for (var i = 0; i < this.allMacthes.length; i++) {
-//   if (this.allMacthes[i]._id == this.suggestedMatch._id) {
-//     this.allMacthes.splice(i, 1);
-//     i--
-//   }
-// }
-     console.log(response.json()),
+     this.HttpRequestsService.inChatRoom.emit(this.singleRequest)
+for (var i = 0; i < this.allRequests.length; i++) {
+  if (this.allRequests[i]._id == this.singleRequest._id) {
+    this.allRequests.splice(i, 1);
+    i--
+  }
+}
      (error) => console.log(error)
 })
 }
