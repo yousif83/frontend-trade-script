@@ -17,11 +17,12 @@ import { OneReceivedComponent } from './one-received/one-received.component';
 import { OneSentComponent } from './one-sent/one-sent.component';
 import { SignupComponent } from './signup/signup.component';
 import { OneChatMessageComponent } from './one-chat-message/one-chat-message.component'
-import { NotificationsComponent } from './notifications/notifications.component'
+import { NotificationsComponent } from './notifications/notifications.component';
+import { OneLessonMsgComponent } from './one-lesson-msg/one-lesson-msg.component'
 const appRoutes: Routes= [
   {path : 'matches', component : SuggestedMatchesComponent },
   {path : 'connections', component : ConnectionsComponent },
-  {path : 'lesson/:selectedUserId', component : MessageComponent },
+  {path : 'lesson/:selectedUserId/:selectedUserName', component : MessageComponent },
   {path : 'signup', component : SignupComponent }
 ]
 @NgModule({
@@ -37,7 +38,8 @@ const appRoutes: Routes= [
     OneSentComponent,
     SignupComponent,
     OneChatMessageComponent,
-    NotificationsComponent
+    NotificationsComponent,
+    OneLessonMsgComponent
   ],
   imports: [
     BrowserModule,

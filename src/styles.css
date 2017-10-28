@@ -188,7 +188,7 @@ main {
 }
 .tabSelected {
   color: #0077b5!important;
-  border-bottom: 4px solid #0077b5;;
+  border-bottom: 4px solid #0077b5;
 }
 .signupField {
   width: 100%;
@@ -277,4 +277,28 @@ main {
 .suggestedName {
   margin-top: 0px;
   margin-bottom: 0px;
+}
+.logoTradeScript {
+width: 45px;
+margin-right: 5%;
+
+}
+.authBtn:hover {
+    background-color: #0077b5!important;
+}
+.lessonSenderName {
+  font-weight:800;
+  /*font-size: 1em;*/
+  margin-bottom: 0px;
+    font-family: sans-serif;
+}
+.lessonContent {
+  font-family: sans-serif;
+
+}
+.user1Color {
+  color:green;
+}
+.user2Color {
+  color:red;
 }

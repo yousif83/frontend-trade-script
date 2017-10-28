@@ -39,15 +39,13 @@ export class SignupComponent implements OnInit {
     }
     this.HttpRequestsService.signup(userInfo)
     .subscribe(
-      (res) => {
-          this.uploadImage()
+      (res) => {      
   			sessionStorage.setItem('token', res.json().data)
         console.log(sessionStorage.getItem('token'))
         if (sessionStorage.getItem('token') != 'undefined') {
            this.HttpRequestsService.inChatRoom.emit(true)
              this.router.navigate(['./matches']);
         }
-
       } ,
         (error) => console.log(error)
   )

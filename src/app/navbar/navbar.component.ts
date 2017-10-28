@@ -9,9 +9,9 @@ import {HttpRequestsService} from '../httpRequests.service'
 export class NavbarComponent implements OnInit {
 
   constructor(private router: Router, private HttpRequestsService: HttpRequestsService) { }
-  signedUserImg
+  signedUser
   ngOnInit() {
-    this.signedUserImg=this.HttpRequestsService.parseJWT(sessionStorage.getItem('token')).imageUrl
+    this.signedUser=this.HttpRequestsService.parseJWT(sessionStorage.getItem('token'))
   }
   logout(){
     sessionStorage.removeItem('token');

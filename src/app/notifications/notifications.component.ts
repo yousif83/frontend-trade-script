@@ -11,7 +11,8 @@ export class NotificationsComponent implements OnInit {
    signedId
    visible=true
    notifications=[]
-   socket = io('http://localhost:3000/');
+    basuUrl="https://evening-temple-67850.herokuapp.com"
+   socket = io(this.basuUrl);
   constructor(private HttpRequestsService: HttpRequestsService) {
     this.HttpRequestsService.inChatRoom.subscribe(
       (stat: boolean) => {
