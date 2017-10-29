@@ -9,14 +9,13 @@
 
   </nav>
 
-  <div class="board">
+  <div class="board" >
 
-    <app-one-lesson-msg *ngFor="let lessonMsg of lessonMsgs" [singleLessonMsg]="lessonMsg"> </app-one-lesson-msg>
+    <app-one-lesson-msg (change)="boardChange()" *ngFor="let lessonMsg of lessonMsgs" [singleLessonMsg]="lessonMsg" > </app-one-lesson-msg>
 
   </div>
   <div class="messageTextArea">
-    <textarea [(ngModel)]="SentMessage" class="msgTextArea" placeholder="{{placeholderText}}" name="name" rows="4" cols="80" (keyup.enter)="submitlessonMessage(SentMessage)" [disabled]='startLessonFlag'
-                (keydown.shift.Enter)="makeNewLine( )"></textarea>
+    <textarea [(ngModel)]="SentMessage" class="msgTextArea" placeholder="{{placeholderText}}" name="name" rows="4" cols="80" (keyup.enter)="submitlessonMessage(SentMessage)" [disabled]='startLessonFlag'></textarea>
   </div>
     <div class="">
       <button class="btn btn-primary" type="button" name="button" (click)="startChat()">Message</button>

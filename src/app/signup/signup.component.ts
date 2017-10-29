@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
   constructor(private HttpRequestsService: HttpRequestsService, private router: Router, private elem: ElementRef ) { }
+  basuUrl="https://evening-temple-67850.herokuapp.com"
+
    name =''
    email =''
    skillsTeach =[]
@@ -18,6 +20,7 @@ export class SignupComponent implements OnInit {
    loginPassword=''
    loginEmail=''
    imgUrl=""
+
   ngOnInit() {
   }
   signup(){
@@ -35,15 +38,17 @@ export class SignupComponent implements OnInit {
     }),
       skillsToTeach:this.skillsTeach.map(function(item) {
       return item.value;
-    })
+    }),
+      onlineFlag:true
     }
     this.HttpRequestsService.signup(userInfo)
     .subscribe(
-      (res) => {      
+      (res) => {
   			sessionStorage.setItem('token', res.json().data)
         console.log(sessionStorage.getItem('token'))
         if (sessionStorage.getItem('token') != 'undefined') {
            this.HttpRequestsService.inChatRoom.emit(true)
+          this.HttpRequestsService.userOnline(this.HttpRequestsService.parseJWT(sessionStorage.getItem('token'))._id,"true")
              this.router.navigate(['./matches']);
         }
       } ,
@@ -63,6 +68,7 @@ export class SignupComponent implements OnInit {
         console.log(sessionStorage.getItem('token'))
         if (sessionStorage.getItem('token') != 'undefined') {
            this.HttpRequestsService.inChatRoom.emit(true)
+            this.HttpRequestsService.userOnline(this.HttpRequestsService.parseJWT(sessionStorage.getItem('token'))._id,"true")
              this.router.navigate(['./matches']);
         }
     } ,
@@ -84,4 +90,6 @@ export class SignupComponent implements OnInit {
           (error) => console.log(error)
     )
     }
+
+
 }

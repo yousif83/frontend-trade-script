@@ -1,7 +1,9 @@
 
 
 
-<p class="lessonSenderName">
-  {{singleLessonMsg.name}}
-</p>
-<p class="lessonContent"> {{singleLessonMsg.lessonMessage}} </p>
+
+
+  <p class="lessonSenderName">
+    {{singleLessonMsg.name}}
+  </p>
+  <pre  [ngClass]="{'codeStyle': singleLessonMsg.codeFlag, 'lessonContent' : !singleLessonMsg.codeFlag }">{{singleLessonMsg.lessonMessage}}</pre>

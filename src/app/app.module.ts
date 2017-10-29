@@ -18,12 +18,14 @@ import { OneSentComponent } from './one-sent/one-sent.component';
 import { SignupComponent } from './signup/signup.component';
 import { OneChatMessageComponent } from './one-chat-message/one-chat-message.component'
 import { NotificationsComponent } from './notifications/notifications.component';
-import { OneLessonMsgComponent } from './one-lesson-msg/one-lesson-msg.component'
+import { OneLessonMsgComponent } from './one-lesson-msg/one-lesson-msg.component';
+import { SignedInProfileComponent } from './signed-in-profile/signed-in-profile.component'
 const appRoutes: Routes= [
   {path : 'matches', component : SuggestedMatchesComponent },
   {path : 'connections', component : ConnectionsComponent },
-  {path : 'lesson/:selectedUserId/:selectedUserName', component : MessageComponent },
-  {path : 'signup', component : SignupComponent }
+  {path : 'lesson/:selectedUserId/:selectedUserName/:lessonSkill', component : MessageComponent },
+  {path : 'signup', component : SignupComponent } ,
+  {path : 'myProfile', component : SignedInProfileComponent }
 ]
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ const appRoutes: Routes= [
     SignupComponent,
     OneChatMessageComponent,
     NotificationsComponent,
-    OneLessonMsgComponent
+    OneLessonMsgComponent,
+    SignedInProfileComponent
   ],
   imports: [
     BrowserModule,

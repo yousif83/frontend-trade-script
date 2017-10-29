@@ -1,7 +1,12 @@
 <div class="card test">
-   <div class="cardImg">
+  <span  [ngClass]="{'onlineSymbol': suggestedMatch.onlineFlag}">
+
+  </span>
+   <div class="cardImg" >
+
      <img class="suggestedImgs"  src="{{suggestedMatch.imageUrl}}" alt="">
    </div>
+
    <div class="cardTitle">
      <p class="suggestedName">{{suggestedMatch.name}}</p>
    </div>

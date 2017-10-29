@@ -14,8 +14,12 @@ export class NavbarComponent implements OnInit {
     this.signedUser=this.HttpRequestsService.parseJWT(sessionStorage.getItem('token'))
   }
   logout(){
+      this.HttpRequestsService.userOnline(this.HttpRequestsService.parseJWT(sessionStorage.getItem('token'))._id,false)
     sessionStorage.removeItem('token');
 
        this.router.navigate(['./signup']);
+  }
+  profilePage (){
+       this.router.navigate(['./myProfile']);
   }
 }

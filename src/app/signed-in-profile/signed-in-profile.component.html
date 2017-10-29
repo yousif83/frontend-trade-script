@@ -1,0 +1,47 @@
+<app-navbar> </app-navbar>
+
+<main>
+<div class="myProfileInfo">
+  <div class="myImg">
+    <img class="myImgProfile" src="{{profileInfo.imageUrl}}" alt="">
+  </div>
+  <div class="myTitle">
+    <p>{{profileInfo.name}}</p>
+  </div>
+  <div class="editMyProfileBtn">
+    <button class="editProfileBtn btn btn-secondary" type="button" name="button" (click)="startLesson()">Edit Profile</button>
+
+  </div>
+  <div class="MyBio">
+    <p> I am a Full-Stack Web Developer . I love to write code to build new web apps. The most thing I enjoy in coding is that
+there is no limit to what you can learn to improve your skills – languages, algorithms, tools, frameworks. </p>
+  </div>
+  <div class="myProfileSkills">
+
+    <tag-input class="tagsField" id="skillsTeach" name="skillsTeach" [(ngModel)]='skillsTeach' theme='bootstrap' [secondaryPlaceholder]="'Skills I can teach'" [placeholder]="'Add Skills to teach '" ></tag-input>
+    <tag-input class="tagsField" name="skillsLearn" [(ngModel)]='skillsLearn' theme='bootstrap' [secondaryPlaceholder]="'Skills I want to learn '" [placeholder]="'Add Skills to learn '"></tag-input>
+  </div>
+</div>
+
+</main>
+<div class="prevMessaging">
+
+  <nav class="navMessage navbar navbar-toggleable-md navbar-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbarMessageName navbar-brand" href="#">Previous Lessons</a>
+
+    <form class=" searchLessonsForm navbar-form navbar-right">
+        <div class=" form-group">
+          <input  type="text" [(ngModel)]="skill" name="searchLesson" class="searchLessonsBtn form-control" placeholder="Search" (keyup.enter)="getLessonByuser(skill)">
+        </div>
+
+      </form>
+  </nav>
+  <div class="board" >
+    <app-one-lesson-msg (change)="boardChange()" *ngFor="let previouslessonMsg of previouslessonMsgs" [singleLessonMsg]="previouslessonMsg" > </app-one-lesson-msg>
+  </div>
+
+
+</div>

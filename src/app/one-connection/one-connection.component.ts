@@ -14,6 +14,6 @@ export class OneConnectionComponent implements OnInit {
     console.log(this.singleConnection)
   }
   startLesson(){
-     this.router.navigate([`./lesson/${this.singleConnection._id}/${this.singleConnection.name}`]);
+     this.router.navigate([`./lesson/${this.singleConnection._id}/${this.singleConnection.name}/${this.singleConnection.skillsToLearn[0]}`]);
   }
 }

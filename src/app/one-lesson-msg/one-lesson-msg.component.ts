@@ -7,11 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class OneLessonMsgComponent implements OnInit {
 @Input() singleLessonMsg
+
   constructor() { }
-
   ngOnInit() {
-
-    console.log(this.singleLessonMsg)
+  
   }
 
 }
