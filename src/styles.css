@@ -145,7 +145,7 @@ main {
 .mainMessaging {
   margin-top: 2%;
   width: 70%;
-  height: 80vh;
+  height: 74vh;
   border: 1px solid #eee;
   /*margin-bottom: 2%;*/
 }
@@ -172,6 +172,7 @@ main {
   margin: auto;
 }
 .msgTextArea {
+  margin-top: 1%;
   width: 100%;
   border: 2px solid #585b60;
   border-radius: 1%;
@@ -228,7 +229,9 @@ main {
   padding-left: 1%;
 }
 .chatMessaging {
-  border: 1px solid black;
+  margin-right: 5%;
+  border-right: 1px solid silver;
+  border-left: 1px solid silver;
   width: 20%;
   height: 30vh;
   float: right;
@@ -242,9 +245,8 @@ main {
 .chatBoard {
   width: 100%;
   height: 20vh;
-    border: 1px solid green;
-     overflow: scroll;
-     z-index: 1000;
+  overflow-y: scroll;
+  z-index: 1000;
 }
 .inputhat {
 
@@ -292,14 +294,14 @@ margin-right: 5%;
 }
 .lessonContent {
   font-family: sans-serif;
-  margin-left: 2%;
+  margin-left: 2.5%;
   margin-right: 2%;
 
 }
 .codeStyle {
   background-color: #f7f7f7;
   border: 1px solid #eee;
-  margin-left: 2%;
+  margin-left: 2.5%;
   margin-right: 2%;
   padding-left: 2%;
   font-family: 'Titillium Web';
@@ -431,4 +433,57 @@ pre {
   background-color: #0077b5;
   border-radius: 50%;
 
+}
+.startLessonButton {
+  width: 100%;
+  margin: auto;
+}
+.startLessonContainer{
+  width: 25%;
+  margin: auto;
+
+  margin-bottom: 1%;
+}
+button:hover {
+    background-color: #0077b5!important;
+}
+
+.chatMessageNav {
+
+  padding: .3%;
+  margin-right: 5%;
+  border: 1px solid silver;
+  width: 20%;
+  height: 5vh;
+  float: right;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  z-index: 1000;
+  cursor: pointer;
+
+}
+.chatMessageOnlineSymbol{
+  width: 4%;
+  height: 1.50vh;
+  background-color: rgb(66, 183, 42);
+  border: 1px solid rgb(66, 183, 42);
+  display: inline-block;
+  float: left;
+  border-radius: 50%;
+  text-align: right;
+  margin-right: 2%;
+  margin-top: 2%;
+
+}
+.clickhatMessageNav {
+  margin-bottom: 30vh;
+}
+.chatMsgInput {
+  width: 100%;
+
+  border: 0px solid silver;
+  border-top: 1px solid silver;
+  border-bottom: 1px solid silver;
 }

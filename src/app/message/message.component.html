@@ -1,36 +1,37 @@
 <app-navbar> </app-navbar>
 <main class="mainMessaging">
   <nav class="navMessage navbar navbar-toggleable-md navbar-light bg-faded">
-
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <a class="navbarMessageName navbar-brand" href="#">{{selectedUserName}}</a>
-
   </nav>
-
   <div class="board" >
-
     <app-one-lesson-msg (change)="boardChange()" *ngFor="let lessonMsg of lessonMsgs" [singleLessonMsg]="lessonMsg" > </app-one-lesson-msg>
-
   </div>
   <div class="messageTextArea">
     <textarea [(ngModel)]="SentMessage" class="msgTextArea" placeholder="{{placeholderText}}" name="name" rows="4" cols="80" (keyup.enter)="submitlessonMessage(SentMessage)" [disabled]='startLessonFlag'></textarea>
   </div>
-    <div class="">
-      <button class="btn btn-primary" type="button" name="button" (click)="startChat()">Message</button>
-        <button class="btn btn-primary" type="button" name="button" (click)="startLesson()">Start Lesson</button>
-    </div>
 
+  <div class="startLessonContainer">
+      <button [disabled]="disableLessonBtn" class="startLessonButton btn btn-primary" type="button" name="button" (click)="startLesson()">Start Lesson</button>
+  </div>
 </main>
+
+    <!-- <button class=" btn btn-primary" type="button" name="button" >Message</button> -->
+<div class="chatMessageNav" (click)="startChat()" [ngClass]="{'clickhatMessageNav': flag}">
+  <span class="chatMessageOnlineSymbol"></span>
+  <a class="chatMsgHeader" >Messaging</a>
+</div>
 <div class="chatMessaging" [hidden]= !flag>
    <div class="chatBoard">
   <app-one-chat-message *ngFor="let chat of chats" [singlChat]="chat" > </app-one-chat-message>
    </div>
    <div >
-  <textarea [(ngModel)]="chatMessage" name="name" rows="1" cols="33"></textarea>
+  <!-- <textarea  name="name" ></textarea> -->
+  <input class= "chatMsgInput" [(ngModel)]="chatMessage" type="text" name="" value="">
    </div>
    <div class="">
-     <button type="button" name="button" (click)="sendMessage(chatMessage)">send </button>
+     <button class="btn btn-primary" type="button" name="button" (click)="sendMessage(chatMessage)">send </button>
    </div>
 </div>

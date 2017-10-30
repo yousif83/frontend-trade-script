@@ -25,6 +25,7 @@ export class MessageComponent implements OnInit, AfterViewChecked {
      placeholderText="Start a Lesson "
      SentMessage :string
      lessonSkill =""
+     disableLessonBtn=false
 
   constructor(private HttpRequestsService: HttpRequestsService, private route: ActivatedRoute, private elem: ElementRef) {
    }
@@ -113,6 +114,7 @@ receiveLessonMsgs(socket, chatRoom){
 
         if (this.HttpRequestsService.parseJWT(sessionStorage.getItem('token'))._id !=data.senderId) {
               this.startLessonFlag=false
+              this.disableLessonBtn=true
               this.placeholderText=`Teach ${this.selectedUserName} ${this.lessonSkill} `
         }
     }
@@ -132,6 +134,7 @@ getOldLessons(lessonRoom){
 }
 startLesson(){
 this.startLessonFlag=false
+this.disableLessonBtn=true
 this.placeholderText=`Teach ${this.selectedUserName} ${this.lessonSkill} `
 }
 
