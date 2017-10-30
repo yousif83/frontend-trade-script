@@ -7,10 +7,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class OneLessonMsgComponent implements OnInit {
 @Input() singleLessonMsg
-
   constructor() { }
   ngOnInit() {
-  
+      this.singleLessonMsg.lessonMessage = this.singleLessonMsg.lessonMessage.split(/(?=```)/)
+      if (this.singleLessonMsg.lessonMessage.length >1) {
+        this.singleLessonMsg.lessonMessage[1]=this.singleLessonMsg.lessonMessage[1].concat(this.singleLessonMsg.lessonMessage[2])
+        this.singleLessonMsg.lessonMessage.pop()
+        
+          }
+      }
   }
-
-}

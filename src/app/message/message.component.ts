@@ -87,8 +87,8 @@ submitlessonMessage(SentMessage){
   senderId: this.HttpRequestsService.parseJWT(sessionStorage.getItem('token'))._id,
   name: this.signedUserName ,
   receiveUserId: this.selectedUserId[0],
-  lessonMessage: SentMessage.replace(/```/g,''),
-  codeFlag : /^```/.test(SentMessage) && /```$/igm.test(SentMessage),
+  lessonMessage: SentMessage,
+  codeFlag : /```$/igm.test(SentMessage),
   lessonSkill: this.lessonSkill
 
   }

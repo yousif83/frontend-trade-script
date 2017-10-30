@@ -75,6 +75,16 @@ userOnline(userId,onlineFlag){
     console.log(data)
 
 }
+requestNotification(userId,requestFlag){
+  let data ={
+    requestFlag: requestFlag,
+    userId: userId
+  }
+
+    this.socket.emit('notification', data)
+    console.log(data)
+
+}
 requestToConnect = new EventEmitter<object>();
 inChatRoom = new EventEmitter<boolean>();
 

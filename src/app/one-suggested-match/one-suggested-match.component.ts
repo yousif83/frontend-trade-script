@@ -21,6 +21,7 @@ export class OneSuggestedMatchComponent implements OnInit {
     this.lessonToUserOnline()
    }
   addConnect() {
+          this.HttpRequestsService.requestNotification(this.suggestedMatch._id,"true")
      this.HttpRequestsService.addConnects(this.suggestedMatch._id)
     .subscribe(
       response => {
@@ -43,12 +44,13 @@ export class OneSuggestedMatchComponent implements OnInit {
     this.socket.on('userOnline',  (data) =>{
       for (var i = 0; i < this.allMacthes.length; i++) {
         if (this.allMacthes[i]._id == data.userId) {
-           console.log("fuck u" + this.allMacthes[i].id)
+
            this.allMacthes[i].onlineFlag=data.onlineFlag
         }
       }
         console.log(data)
       });
   }
+
 
 }

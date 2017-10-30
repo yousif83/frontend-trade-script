@@ -282,6 +282,8 @@ margin-right: 5%;
     background-color: #0077b5!important;
 }
 .lessonSenderName {
+  margin-bottom: 0;
+  margin-top: 2%;
   font-weight:800;
   /*font-size: 1em;*/
 
@@ -299,6 +301,7 @@ margin-right: 5%;
   border: 1px solid #eee;
   margin-left: 2%;
   margin-right: 2%;
+  padding-left: 2%;
   font-family: 'Titillium Web';
   border-radius: 5px;
 }
@@ -408,4 +411,24 @@ width:100%;
   text-align: right;
   margin-left: 92%;
   margin-top: 2%;
+}
+pre {
+  margin: 0;
+  margin-bottom: 0.5%;
+}
+
+
+ p + pre{
+    background-color: white!important;
+    border: 0px solid white!important ;
+    padding-left: 0!important;
+}
+.notificationreq{
+  background-color: red;
+}
+.badge1 {
+
+  background-color: #0077b5;
+  border-radius: 50%;
+
 }
