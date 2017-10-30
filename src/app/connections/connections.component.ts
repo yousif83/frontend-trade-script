@@ -38,7 +38,6 @@ export class ConnectionsComponent implements OnInit {
         this.connections=response.json()
         this.HttpRequestsService.inChatRoom.subscribe(
           (acceptedRequest: object) => {
-          console.log(acceptedRequest)
           this.connections.push(acceptedRequest)
         })
       },

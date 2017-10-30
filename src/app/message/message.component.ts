@@ -30,7 +30,7 @@ export class MessageComponent implements OnInit, AfterViewChecked {
   constructor(private HttpRequestsService: HttpRequestsService, private route: ActivatedRoute, private elem: ElementRef) {
    }
    ngAfterViewChecked() {
-           let board=this.elem.nativeElement.querySelector('.board')
+         let board=this.elem.nativeElement.querySelector('.board')
          board.scrollTop =board.scrollHeight
    }
 
@@ -93,8 +93,6 @@ submitlessonMessage(SentMessage){
   lessonSkill: this.lessonSkill
 
   }
-    console.log(SentMessage)
-
     this.socket.emit('lesson', lessonData)
     this.SentMessage =null
       this.placeholderText=`Wait for ${this.selectedUserName}`
@@ -124,7 +122,6 @@ getOldLessons(lessonRoom){
   this.HttpRequestsService.getLessonByLessonRoom(lessonRoom)
   .subscribe(
     (response) => {
-      console.log(response.json())
       this.lessonMsgs=response.json()
          let board=this.elem.nativeElement.querySelector('.board')
       board.scrollTop =board.scrollHeight

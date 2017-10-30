@@ -35,20 +35,16 @@ export class OneSuggestedMatchComponent implements OnInit {
   })
   }
   ngOnInit() {
-
     this.skillsTeachStr=this.suggestedMatch.skillsToTeach.join()
     this.skillsLearnStr=this.suggestedMatch.skillsToLearn.join()
   }
-
   lessonToUserOnline(){
     this.socket.on('userOnline',  (data) =>{
       for (var i = 0; i < this.allMacthes.length; i++) {
         if (this.allMacthes[i]._id == data.userId) {
-
            this.allMacthes[i].onlineFlag=data.onlineFlag
         }
       }
-        console.log(data)
       });
   }
 

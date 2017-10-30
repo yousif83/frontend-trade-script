@@ -24,7 +24,6 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
   }
   signup(){
-     console.log(this.imgUrl)
     let userInfo={
       name:this.name,
       email:this.email,
@@ -45,7 +44,6 @@ export class SignupComponent implements OnInit {
     .subscribe(
       (res) => {
   			sessionStorage.setItem('token', res.json().data)
-        console.log(sessionStorage.getItem('token'))
         if (sessionStorage.getItem('token') != 'undefined') {
            this.HttpRequestsService.inChatRoom.emit(true)
           this.HttpRequestsService.userOnline(this.HttpRequestsService.parseJWT(sessionStorage.getItem('token'))._id,"true")
@@ -62,10 +60,8 @@ export class SignupComponent implements OnInit {
 	}
   this.HttpRequestsService.login(data)
   .subscribe(
-    (res) => {
-      console.log(res)
+    (res) => {  
         sessionStorage.setItem('token', res.json().data)
-        console.log(sessionStorage.getItem('token'))
         if (sessionStorage.getItem('token') != 'undefined') {
            this.HttpRequestsService.inChatRoom.emit(true)
             this.HttpRequestsService.userOnline(this.HttpRequestsService.parseJWT(sessionStorage.getItem('token'))._id,"true")
@@ -80,12 +76,10 @@ export class SignupComponent implements OnInit {
       let formData=new FormData()
       let img=files[0]
       formData.append('image', img)
-      console.log(formData)
       this.HttpRequestsService.uploadImg(formData)
       .subscribe(
         (res) => {
         this.imgUrl= res.json()
-        console.log(this.imgUrl)
         } ,
           (error) => console.log(error)
     )

@@ -10,15 +10,11 @@ import {HttpRequestsService} from '../httpRequests.service'
 export class SuggestedMatchesComponent implements OnInit {
 
   constructor(private HttpRequestsService: HttpRequestsService) { }
-
  matches
-
-
   ngOnInit() {
     this.HttpRequestsService.getUsers()
     .subscribe(
       (response) => {
-        console.log(response.json())
         this.matches=response.json()
       },
         (error) => console.log(error)

@@ -13,7 +13,6 @@ export class SignedInProfileComponent implements OnInit {
   previouslessonMsgs = []
 
   constructor(private HttpRequestsService: HttpRequestsService) { }
-
   ngOnInit() {
     this.profileInfo= this.HttpRequestsService.parseJWT(sessionStorage.getItem('token'))
     this.skillsTeach=this.profileInfo.skillsToTeach
@@ -21,11 +20,11 @@ export class SignedInProfileComponent implements OnInit {
 
   }
 getLessonByuser(skill){
-  console.log(skill)
+
   this.HttpRequestsService.getLessonsByuserId(this.profileInfo._id, skill)
   .subscribe(
     (response) => {
-      console.log(response.json())
+    
       this.previouslessonMsgs=response.json()
 
     },
