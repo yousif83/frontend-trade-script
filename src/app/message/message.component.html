@@ -29,9 +29,9 @@
    </div>
    <div >
   <!-- <textarea  name="name" ></textarea> -->
-  <input class= "chatMsgInput" [(ngModel)]="chatMessage" type="text" name="" value="">
+  <input class= "chatMsgInput" [(ngModel)]="chatMessage" type="text" name="" value="" (keyup.enter)="sendMessage(chatMessage)">
    </div>
-   <div class="">
+   <!-- <div class="">
      <button class="btn btn-primary" type="button" name="button" (click)="sendMessage(chatMessage)">send </button>
-   </div>
+   </div> -->
 </div>

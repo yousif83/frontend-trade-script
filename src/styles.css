@@ -64,23 +64,24 @@ main {
 }
 
 .profileImg {
-  width: 35%;
+  width: 25%;
   height: 3.5vw;
   background-size: cover;
   display: block;
   border-radius: 50%;
   float: left;
+  margin-top: 1.5%;
 
 }
 
 .profile {
-  width:10%;
+  width:15%;
   margin-left: 2%;
 }
 .profileName {
   font-size: 0.9em;
   margin-top: 10%;
-  margin-left: 45%;
+  margin-left: 33%;
   color: white;
 }
 .mainTitle {
@@ -244,7 +245,7 @@ main {
 }
 .chatBoard {
   width: 100%;
-  height: 20vh;
+  height: 25vh;
   overflow-y: scroll;
   z-index: 1000;
 }
@@ -278,7 +279,6 @@ main {
 .logoTradeScript {
 width: 45px;
 margin-right: 5%;
-
 }
 .authBtn:hover {
     background-color: #0077b5!important;
@@ -287,25 +287,33 @@ margin-right: 5%;
   margin-bottom: 0;
   margin-top: 2%;
   font-weight:800;
-  /*font-size: 1em;*/
-
+  font-size: 1em;
   margin-left: 2.5%;
-    font-family: sans-serif;
+  font-family: sans-serif;
 }
 .lessonContent {
   font-family: sans-serif;
   margin-left: 2.5%;
   margin-right: 2%;
-
+  font-size: 1em;
 }
 .codeStyle {
-  background-color: #f7f7f7;
-  border: 1px solid #eee;
+  background-color: #eee;
+  border: 1px solid #cecece;
   margin-left: 2.5%;
   margin-right: 2%;
   padding-left: 2%;
   font-family: 'Titillium Web';
   border-radius: 5px;
+    font-size: 1em;
+}
+.chatSender{
+  font-weight:800;
+}
+.chatMsgContainer{
+margin: 2%;
+margin-bottom: 5%;
+font-size: 0.9em;
 }
 
 
@@ -333,13 +341,14 @@ width:100%;
 }
 .myTitle {
  margin-top: 9%;
- margin-left: 10%;
+ margin-left: 5%;
  float: left;
  font-size: 1.5em;
+
 }
 .editMyProfileBtn {
-  float: right;
-    margin-right: 15%;
+  float: left;
+  margin-left: 5%;
 
 }
 .editProfileBtn {
@@ -354,7 +363,7 @@ width:100%;
   float: right;
   text-align: center;
   font-size: .65em;
-  color: black;
+  color: #606060;
   /*border-top: 1px solid #eee;*/
   padding-top: 2%;
 }
@@ -485,5 +494,9 @@ button:hover {
 
   border: 0px solid silver;
   border-top: 1px solid silver;
-  border-bottom: 1px solid silver;
+  /*border-bottom: 1px solid silver;*/
+}
+.chatMsgInput:focus {
+  outline: none;
+  border-top: 1px solid #0077b5;
 }
