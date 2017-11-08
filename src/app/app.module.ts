@@ -24,7 +24,7 @@ const appRoutes: Routes= [
   {path : 'matches', component : SuggestedMatchesComponent },
   {path : 'connections', component : ConnectionsComponent },
   {path : 'lesson/:selectedUserId/:selectedUserName/:lessonSkill', component : MessageComponent },
-  {path : 'signup', component : SignupComponent } ,
+  {path : '', component : SignupComponent } ,
   {path : 'myProfile', component : SignedInProfileComponent }
 ]
 @NgModule({
